@@ -2,6 +2,8 @@
 
 **Find contributors by who they've actually shipped with, not by how well they describe themselves.**
 
+**Demo video (62 s):** [youtu.be/Lbn-1gEQjpU](https://youtu.be/Lbn-1gEQjpU) · **Sample report:** [sample-output/report.html](sample-output/report.html)
+
 Built on HydraDB's open-source SelfGraph for the HydraDB Hackathon. It fits both tracks: a context layer for agents, and a graph that sharpens every run.
 
 ## The problem
