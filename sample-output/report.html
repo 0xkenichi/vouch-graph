@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vouch Graph demo</title><style>
+:root{--bg:#0e0f12;--card:#17191d;--line:#2a2d33;--fg:#eceae6;--mute:#9a978f;--acc:#7dd3fc;--bad:#fca5a5;--ok:#86efac}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 Inter,system-ui,sans-serif}
+.w{max-width:1100px;margin:0 auto;padding:36px 20px 60px}h1{font-size:34px;margin:0 0 6px;letter-spacing:-.02em}.sub{color:var(--mute)}
+.q{margin:22px 0;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:800px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}h2{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);margin:0 0 12px}
+.pick{font-size:24px;font-weight:700}.bad{color:var(--bad)}.ok{color:var(--ok)}.mono{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--mute)}
+.rank{list-style:none;padding:0;margin:0}.rank li{border-top:1px solid var(--line);padding:10px 0}.rank li:first-child{border-top:0}
+.top{display:flex;justify-content:space-between}.score{font-family:ui-monospace,Menlo,monospace;color:var(--acc)}.path{color:var(--acc);font-size:14px}.ev{color:var(--mute);font-size:13px}
+.step{margin-top:26px}</style></head><body><div class="w">
+<h1>Vouch Graph</h1><div class="sub">Find contributors by who they've actually shipped with. Built on HydraDB's open-source SelfGraph, running locally. Sample data: a made-up Lagos builders community.</div>
+<div class="q">“Who can host a Yoruba-language onboarding call for newcomers, and has actually shipped with people we trust?”</div>
+<div class="grid">
+<div class="card"><h2>Profile search (a vector store over bios)</h2>
+<div class="pick bad">Tunde</div><p>“Yoruba native speaker and world-class community host. Hosted 100+ onboarding calls for newcomers and Yoruba-language community events. 10x growth. DM for collabs.”</p>
+<p class="mono">In the graph: Ambassador AMA promo campaign (no-show)</p></div>
+<div class="card"><h2>Vouch Graph: walking who shipped with whom</h2><ol class='rank'><li><div class="top"><b>1. Ngozi</b><span class="score">27</span></div>
+<div class="path">You → Ngozi (shipped &quot;Weekly newcomer onboarding calls, October&quot; together)</div><div class="ev">Yoruba translation of the Q4 roadmap (delivered); Weekly newcomer onboarding calls, October (delivered); Staking explainer article (delivered)</div></li><li><div class="top"><b>2. Bisi</b><span class="score">27</span></div>
+<div class="path">You → Bisi (shipped &quot;Lagos meetup at Yaba&quot; together)</div><div class="ev">Lagos meetup at Yaba (delivered); Twitter Space on staking, in Yoruba (delivered)</div></li><li><div class="top"><b>3. Femi</b><span class="score">21</span></div>
+<div class="path">You → Ngozi (&quot;Weekly newcomer onboarding calls, October&quot;) → Femi (&quot;Yoruba translation of the Q4 roadmap&quot;)</div><div class="ev">Twitter Space on staking, in Yoruba (delivered); Yoruba translation of the Q4 roadmap (delivered)</div></li></ol>
+<p class="mono">68 relations walked by SelfGraph retrieve; trust paths computed from you</p></div>
+</div>
+<div class="step"><h2>Then a hire happens and its outcome is written back</h2>
+<div class="grid"><div class="card"><h2>Today, after the write-back</h2><ol class='rank'><li><div class="top"><b>1. Bisi</b><span class="score">45</span></div>
+<div class="path">You → Bisi (shipped &quot;Lagos meetup at Yaba&quot; together)</div><div class="ev">Yoruba onboarding call, November pilot (delivered); Lagos meetup at Yaba (delivered); Twitter Space on staking, in Yoruba (delivered)</div></li><li><div class="top"><b>2. Ngozi</b><span class="score">27</span></div>
+<div class="path">You → Ngozi (shipped &quot;Weekly newcomer onboarding calls, October&quot; together)</div><div class="ev">Yoruba translation of the Q4 roadmap (delivered); Weekly newcomer onboarding calls, October (delivered); Staking explainer article (delivered)</div></li><li><div class="top"><b>3. Femi</b><span class="score">21</span></div>
+<div class="path">You → Ngozi (&quot;Weekly newcomer onboarding calls, October&quot;) → Femi (&quot;Yoruba translation of the Q4 roadmap&quot;)</div><div class="ev">Twitter Space on staking, in Yoruba (delivered); Yoruba translation of the Q4 roadmap (delivered)</div></li></ol></div>
+<div class="card"><h2>Same question, <code>as_of</code> 31 Oct (versioned facts)</h2><ol class='rank'><li><div class="top"><b>1. Ngozi</b><span class="score">27</span></div>
+<div class="path">You → Ngozi (shipped &quot;Weekly newcomer onboarding calls, October&quot; together)</div><div class="ev">Yoruba translation of the Q4 roadmap (delivered); Weekly newcomer onboarding calls, October (delivered); Staking explainer article (delivered)</div></li><li><div class="top"><b>2. Bisi</b><span class="score">27</span></div>
+<div class="path">You → Bisi (shipped &quot;Lagos meetup at Yaba&quot; together)</div><div class="ev">Lagos meetup at Yaba (delivered); Twitter Space on staking, in Yoruba (delivered)</div></li><li><div class="top"><b>3. Femi</b><span class="score">21</span></div>
+<div class="path">You → Ngozi (&quot;Weekly newcomer onboarding calls, October&quot;) → Femi (&quot;Yoruba translation of the Q4 roadmap&quot;)</div><div class="ev">Twitter Space on staking, in Yoruba (delivered); Yoruba translation of the Q4 roadmap (delivered)</div></li></ol></div></div></div>
+<p class="sub" style="margin-top:26px">The answer is a path through people who delivered work with people you already trust. Text similarity between a bio and a question can't produce that.</p>
+</div></body></html>

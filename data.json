@@ -1,0 +1,163 @@
+{
+  "community": "Lagos Builders DAO (sample data)",
+  "you": "kenichi",
+  "people": [
+    {
+      "id": "p_kenichi",
+      "name": "Kenichi",
+      "bio": "Runs community ops for Lagos Builders DAO."
+    },
+    {
+      "id": "p_ngozi",
+      "name": "Ngozi",
+      "bio": "Community lead. Runs onboarding calls."
+    },
+    {
+      "id": "p_femi",
+      "name": "Femi",
+      "bio": "Translator. Yoruba and English."
+    },
+    {
+      "id": "p_tunde",
+      "name": "Tunde",
+      "bio": "Yoruba native speaker and world-class community host. Hosted 100+ onboarding calls for newcomers and Yoruba-language community events. 10x growth. DM for collabs."
+    },
+    {
+      "id": "p_amaka",
+      "name": "Amaka",
+      "bio": "Writer and editor."
+    },
+    {
+      "id": "p_chidi",
+      "name": "Chidi",
+      "bio": "Developer, bots and dashboards."
+    },
+    {
+      "id": "p_bisi",
+      "name": "Bisi",
+      "bio": "Hosts calls and Twitter Spaces."
+    },
+    {
+      "id": "p_kola",
+      "name": "Kola",
+      "bio": "Data analyst, Dune."
+    },
+    {
+      "id": "p_zainab",
+      "name": "Zainab",
+      "bio": "Events and partnerships."
+    }
+  ],
+  "work": [
+    {
+      "id": "w01",
+      "title": "Yoruba translation of the Q4 roadmap",
+      "people": [
+        "p_femi",
+        "p_ngozi"
+      ],
+      "roles": "Femi translated, Ngozi reviewed and published it",
+      "outcome": "delivered",
+      "when": "2026-10-04",
+      "proof": "https://example.org/roadmap-yo"
+    },
+    {
+      "id": "w02",
+      "title": "Weekly newcomer onboarding calls, October",
+      "people": [
+        "p_ngozi",
+        "p_kenichi"
+      ],
+      "roles": "Ngozi hosted four calls, Kenichi ran the follow-up docs",
+      "outcome": "delivered",
+      "when": "2026-10-30",
+      "proof": "https://example.org/onboarding-oct"
+    },
+    {
+      "id": "w03",
+      "title": "Lagos meetup at Yaba",
+      "people": [
+        "p_zainab",
+        "p_kenichi",
+        "p_bisi"
+      ],
+      "roles": "Zainab ran venue and partners, Bisi hosted the Yoruba segment, Kenichi did check-in",
+      "outcome": "delivered",
+      "when": "2026-09-20",
+      "proof": "https://example.org/yaba-meetup"
+    },
+    {
+      "id": "w04",
+      "title": "Quest-tracking Discord bot",
+      "people": [
+        "p_chidi",
+        "p_kenichi"
+      ],
+      "roles": "Chidi built it, Kenichi wrote the quest rules",
+      "outcome": "delivered",
+      "when": "2026-10-12",
+      "proof": "https://example.org/quest-bot"
+    },
+    {
+      "id": "w05",
+      "title": "Treasury dashboard",
+      "people": [
+        "p_kola",
+        "p_chidi"
+      ],
+      "roles": "Kola wrote the queries, Chidi wired the alerts",
+      "outcome": "delivered late",
+      "when": "2026-10-28",
+      "proof": "https://example.org/treasury"
+    },
+    {
+      "id": "w06",
+      "title": "Twitter Space on staking, in Yoruba",
+      "people": [
+        "p_bisi",
+        "p_femi"
+      ],
+      "roles": "Bisi hosted, Femi prepared the glossary",
+      "outcome": "delivered",
+      "when": "2026-10-18",
+      "proof": "https://example.org/space-staking"
+    },
+    {
+      "id": "w07",
+      "title": "Ambassador AMA promo campaign",
+      "people": [
+        "p_tunde"
+      ],
+      "roles": "Tunde said he would run promotion for the AMA",
+      "outcome": "no-show",
+      "when": "2026-10-09",
+      "proof": ""
+    },
+    {
+      "id": "w08",
+      "title": "Staking explainer article",
+      "people": [
+        "p_amaka",
+        "p_ngozi"
+      ],
+      "roles": "Amaka wrote, Ngozi checked it with newcomers",
+      "outcome": "delivered",
+      "when": "2026-10-01",
+      "proof": "https://example.org/staking-explainer"
+    }
+  ],
+  "questions": [
+    "Who can host a Yoruba-language onboarding call for newcomers, and has actually shipped with people we trust?"
+  ],
+  "new_outcome": {
+    "id": "w09",
+    "title": "Yoruba onboarding call, November pilot",
+    "people": [
+      "p_bisi"
+    ],
+    "roles": "Bisi hosted it in Yoruba for 31 newcomers",
+    "outcome": "delivered",
+    "when": "2026-11-15",
+    "proof": "https://example.org/onboarding-yo-nov"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "label": "run2",
+  "question": "Who can host a Yoruba-language onboarding call for newcomers, and has actually shipped with people we trust?",
+  "as_of": null,
+  "bio_search": [
+    {
+      "name": "Tunde",
+      "bio": "Yoruba native speaker and world-class community host. Hosted 100+ onboarding calls for newcomers and Yoruba-language community events. 10x growth. DM for collabs.",
+      "similarity": 0.423
+    },
+    {
+      "name": "Femi",
+      "bio": "Translator. Yoruba and English.",
+      "similarity": 0.236
+    },
+    {
+      "name": "Zainab",
+      "bio": "Events and partnerships.",
+      "similarity": 0.136
+    }
+  ],
+  "graph": {
+    "seeds": [
+      {
+        "id": "person:tunde",
+        "score": 8.22387338768097
+      },
+      {
+        "id": "thing:yoruba-language",
+        "score": 6.43359349381577
+      },
+      {
+        "id": "work:w09",
+        "score": 4.784541439924163
+      },
+      {
+        "id": "person:ngozi",
+        "score": 2.8204726706238437
+      },
+      {
+        "id": "skill:onboarding",
+        "score": 2.5671155110308326
+      }
+    ],
+    "relations_walked": 72,
+    "context": "Tunde: Yoruba native speaker and world-class community host. Hosted 100+ onboarding calls for newcomers and Yoruba-language community events. 10x growth. DM for collabs.\nNgozi: Community lead. Runs onboarding calls.\nFemi: Translator. Yoruba and English.\nYoruba onboarding call, November pilot -[NEEDED]-> hosting\nYoruba onboarding call, November pilot -[NEEDED]-> onboarding\nYoruba onboarding call, November pilot -[NEEDED]-> yoruba\nBisi -[SHIPPED]-> Yoruba onboarding call, November pilot {outcome=delivered}\nFemi -[SHIPPED]-> Twitter Space on staking, in Yoruba {outcome=delivered}\nFemi -[WORKED_WITH]-> Bisi {on=Twitter Space on staking, in Yoruba, outcome=delivered}\nBisi -[WORKED_WITH]-> Femi {on=Twitter Space on staking, in Yoruba, outcome=delivered}\nTwitter Space on staking, in Yoruba -[NEEDED]-> yoruba\nBisi -[SHIPPED]-> Twitter Space on staking, in Yoruba {outcome=delivered}\nTwitter Space on staking, in Yoruba -[NEEDED]-> hosting\nNgozi -[SHIPPED]-> Weekly newcomer onboarding calls, October {outcome=delivered}\nWeekly newcomer onboarding calls, October -[NEEDED]-> onboarding\nWeekly newcomer onboarding calls, October -[NEEDED]-> hosting\nNgozi -[SHIPPED]-> Yoruba translation of the Q4 roadmap {outcome=delivered}\nNgozi -[WORKED_WITH]-> Femi {on=Yoruba translation of the Q4 roadmap, outcome=delivered}\nFemi -[WORKED_WITH]-> Ngozi {on=Yoruba translation of the Q4 roadmap, outcome=delivered}\nFemi -[SHIPPED]-> Yoruba translation of the Q4 roadmap {outcome=delivered}\nYoruba translation o"
+  },
+  "ranked": [
+    {
+      "name": "Bisi",
+      "score": 45,
+      "path": "You \u2192 Bisi (shipped \"Lagos meetup at Yaba\" together)",
+      "shipped": [
+        {
+          "work": "Yoruba onboarding call, November pilot",
+          "outcome": "delivered",
+          "skills": [
+            "hosting",
+            "onboarding",
+            "yoruba"
+          ]
+        },
+        {
+          "work": "Lagos meetup at Yaba",
+          "outcome": "delivered",
+          "skills": [
+            "hosting",
+            "yoruba"
+          ]
+        },
+        {
+          "work": "Twitter Space on staking, in Yoruba",
+          "outcome": "delivered",
+          "skills": [
+            "hosting",
+            "yoruba"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ngozi",
+      "score": 27,
+      "path": "You \u2192 Ngozi (shipped \"Weekly newcomer onboarding calls, October\" together)",
+      "shipped": [
+        {
+          "work": "Yoruba translation of the Q4 roadmap",
+          "outcome": "delivered",
+          "skills": [
+            "translation",
+            "yoruba"
+          ]
+        },
+        {
+          "work": "Weekly newcomer onboarding calls, October",
+          "outcome": "delivered",
+          "skills": [
+            "hosting",
+            "onboarding"
+          ]
+        },
+        {
+          "work": "Staking explainer article",
+          "outcome": "delivered",
+          "skills": [
+            "onboarding",
+            "writing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Femi",
+      "score": 21,
+      "path": "You \u2192 Ngozi (\"Weekly newcomer onboarding calls, October\") \u2192 Femi (\"Yoruba translation of the Q4 roadmap\")",
+      "shipped": [
+        {
+          "work": "Twitter Space on staking, in Yoruba",
+          "outcome": "delivered",
+          "skills": [
+            "hosting",
+            "yoruba"
+          ]
+        },
+        {
+          "work": "Yoruba translation of the Q4 roadmap",
+          "outcome": "delivered",
+          "skills": [
+            "translation",
+            "yoruba"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Zainab",
+      "score": 15,
+      "path": "You \u2192 Zainab (shipped \"Lagos meetup at Yaba\" together)",
+      "shipped": [
+        {
+          "work": "Lagos meetup at Yaba",
+          "outcome": "delivered",
+          "skills": [
+            "hosting",
+            "yoruba"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Amaka",
+      "score": 9,
+      "path": "You \u2192 Ngozi (\"Weekly newcomer onboarding calls, October\") \u2192 Amaka (\"Staking explainer article\")",
+      "shipped": [
+        {
+          "work": "Staking explainer article",
+          "outcome": "delivered",
+          "skills": [
+            "onboarding",
+            "writing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chidi",
+      "score": 5.0,
+      "path": "You \u2192 Chidi (shipped \"Quest-tracking Discord bot\" together)",
+      "shipped": [
+        {
+          "work": "Quest-tracking Discord bot",
+          "outcome": "delivered",
+          "skills": [
+            "dev",
+            "writing"
+          ]
+        },
+        {
+          "work": "Treasury dashboard",
+          "outcome": "delivered late",
+          "skills": [
+            "writing"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tunde",
+      "score": -2.0,
+      "path": null,
+      "shipped": [
+        {
+          "work": "Ambassador AMA promo campaign",
+          "outcome": "no-show",
+          "skills": []
+        }
+      ]
+    }
+  ]
+}
