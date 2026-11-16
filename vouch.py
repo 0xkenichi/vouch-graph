@@ -12,7 +12,7 @@ logging.getLogger("selfgraph").setLevel(logging.ERROR)
 from collections import Counter
 from pathlib import Path
 
-from selfgraph import KuzuStore, SelfGraph
+from selfgraph import HydraDBStore, KuzuStore, SelfGraph
 
 HERE = Path(__file__).parent
 DATA = json.loads((HERE / "data.json").read_text())
@@ -130,7 +130,9 @@ async def outcome(graph):
 
 async def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "demo"
-    async with SelfGraph(store=KuzuStore(STORE)) as graph:
+    store = (HydraDBStore(os.environ["HYDRADB_URI"], auth=("neo4j", os.environ.get("HYDRADB_TOKEN", "")), database="default")
+             if os.environ.get("HYDRADB_URI") else KuzuStore(STORE))
+    async with SelfGraph(store=store) as graph:
         q = DATA["questions"][0]
         if cmd in ("setup", "demo"): await setup(graph)
         if cmd in ("ask", "demo"): await ask(graph, q, "run1")

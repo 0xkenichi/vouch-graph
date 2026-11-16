@@ -1,0 +1,73 @@
+{
+  "seeds": 5,
+  "people": 40,
+  "tasks_per_round": 12,
+  "rounds": 10,
+  "store": "Kuzu (embedded)",
+  "curve": [
+    {
+      "round": 1,
+      "graph": 0.5,
+      "bio": 0.617,
+      "oracle": 0.933
+    },
+    {
+      "round": 2,
+      "graph": 0.717,
+      "bio": 0.65,
+      "oracle": 0.933
+    },
+    {
+      "round": 3,
+      "graph": 0.717,
+      "bio": 0.583,
+      "oracle": 0.983
+    },
+    {
+      "round": 4,
+      "graph": 0.833,
+      "bio": 0.634,
+      "oracle": 0.95
+    },
+    {
+      "round": 5,
+      "graph": 0.767,
+      "bio": 0.633,
+      "oracle": 0.917
+    },
+    {
+      "round": 6,
+      "graph": 0.833,
+      "bio": 0.684,
+      "oracle": 0.917
+    },
+    {
+      "round": 7,
+      "graph": 0.867,
+      "bio": 0.567,
+      "oracle": 0.95
+    },
+    {
+      "round": 8,
+      "graph": 0.933,
+      "bio": 0.75,
+      "oracle": 0.983
+    },
+    {
+      "round": 9,
+      "graph": 0.9,
+      "bio": 0.733,
+      "oracle": 0.967
+    },
+    {
+      "round": 10,
+      "graph": 0.883,
+      "bio": 0.683,
+      "oracle": 0.967
+    }
+  ],
+  "baseline_mean": 0.653,
+  "vouch_round1": 0.5,
+  "vouch_last3": 0.905,
+  "oracle_mean": 0.95
+}
