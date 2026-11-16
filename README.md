@@ -14,7 +14,7 @@ A vector search over profiles makes this worse. It finds the person whose bio be
 
 ## What Vouch Graph does
 
-It's built on **HydraDB's open-source [SelfGraph](https://github.com/hydra-db/selfgraph)**, a versioned knowledge graph SDK. It runs locally on SelfGraph's embedded store, so you need no server, no LLM and no paid key.
+It runs on the **open-source [HydraDB](https://github.com/hydra-db/hydradb) engine** (v0.4.0, run locally in Docker) as its graph database, through **HydraDB's [SelfGraph](https://github.com/hydra-db/selfgraph)** SDK (`HydraDBStore` over Bolt). You need no LLM and no paid key. Without `HYDRADB_URI` it falls back to SelfGraph's embedded store for quick tries.
 
 ```
 people  ──CLAIMS──▶ skill          (from their own bio: what they say)
@@ -44,13 +44,46 @@ retrieve(as_of=...) replays what the graph would have said before
 
 ## Run it
 
+Start the HydraDB engine (single local node, as in HydraDB's README):
+
+```bash
+mkdir -p .hydradb/store .hydradb/cache && echo local-development-token-32-bytes > .hydradb/auth-token
+docker run -d --name hydradb -p 7687:7687 -v $PWD/.hydradb:/data \
+  -e CLOUD_PROVIDER=local -e LOCAL_PATH=/data/store -e GRAPH_NAMESPACE=default -e GRAPH_ID=default \
+  -e GRAPH_CELL_ID=cell-0 -e GRAPH_CELLS=cell-0 -e GRAPH_NODE_ID=node-0 \
+  -e GRAPH_BOLT_NODE_ADDRESSES=node-0=127.0.0.1:7687 -e GRAPH_ADVERTISED_BOLT_ADDR=127.0.0.1:7687 \
+  -e GRAPH_BOLT_ADDR=0.0.0.0:7687 -e GRAPH_DATA_CACHE_DIR=/data/cache -e GRAPH_AUTH_TOKEN_FILE=/data/auth-token \
+  -e GRAPH_ALLOW_PLAINTEXT=true -e GRAPH_USAGE_REPORT_ENABLED=false -e RUST_MIN_STACK=33554432 ghcr.io/hydra-db/hydradb:latest
+export HYDRADB_URI=bolt://127.0.0.1:7687 HYDRADB_TOKEN=local-development-token-32-bytes
+```
+
+Then:
+
 ```bash
 python3.12 -m venv .venv && .venv/bin/pip install "selfgraph[kuzu] @ git+https://github.com/hydra-db/selfgraph"
 .venv/bin/python vouch.py demo     # build the graph → ask → write back an outcome → ask again → ask as_of 31 Oct
 .venv/bin/python report.py         # out/report.html
+.venv/bin/python eval.py           # Track 1 learning curve (SEED=1..5 for the averaged result)
 ```
 
 To use your own community, edit `data.json`. Swap `KuzuStore` for `HydraDBStore` to run on a HydraDB server.
+
+## Does it get sharper? (Track 1)
+
+**Metric:** hire success rate, the share of tasks where the chosen person actually delivered. Outcomes come from hidden true delivery rates, never from the method.
+
+**Baseline:** profile search over self-written bios.
+
+**Setup:** 5 simulated communities × 40 people, 10 rounds × 12 tasks. 35% of bios are inflated, and many honest bios are thin. Each round's outcomes are written back to HydraDB.
+
+| | Hire success |
+|---|---|
+| Vouch Graph, round 1 (cold start) | 50% |
+| Vouch Graph, rounds 8–10 | **90%** |
+| Profile search (all rounds) | 65% |
+| Oracle (knows the truth) | 95% |
+
+The curve is at https://0xkenichi.github.io/vouch-graph/ and the per-seed data is in `sample-output/eval_seed*.json`.
 
 ## Go-to-market
 

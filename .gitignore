@@ -4,3 +4,4 @@ out/
 .venv
 .tools
 *.kuzu
+.hydradb

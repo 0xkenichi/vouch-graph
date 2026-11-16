@@ -3,7 +3,7 @@
   "people": 40,
   "tasks_per_round": 12,
   "rounds": 10,
-  "store": "Kuzu (embedded)",
+  "store": "HydraDB",
   "curve": [
     {
       "round": 1,

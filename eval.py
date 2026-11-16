@@ -66,7 +66,7 @@ async def graph_pick(graph, people, skill, by_id):
 
 async def run(store_factory):
     people = make_world(); by_id = {p["id"]: p for p in people}
-    async with SelfGraph(store=store_factory()) as graph:
+    async with SelfGraph(store=store_factory(), namespace=f"vouch-eval-s{os.environ.get('SEED', 7)}-{os.getpid()}") as graph:
         ents = [{"id": p["id"], "type": "Person", "name": p["name"], "properties": {"bio": p["bio"]}} for p in people]
         ents += [{"id": f"skill:{s.replace(' ', '-')}", "type": "Skill", "name": s} for s in SKILLS]
         rels = [{"from_entity": p["id"], "type": "CLAIMS", "to_entity": f"skill:{s.replace(' ', '-')}"} for p in people for s in p["claimed"]]

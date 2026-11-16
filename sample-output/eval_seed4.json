@@ -1,5 +1,5 @@
 {
-  "store": "Kuzu (embedded)",
+  "store": "HydraDB",
   "rounds": 10,
   "tasks_per_round": 12,
   "people": 40,
